@@ -1,7 +1,51 @@
 #include<iostream>
 
 using namespace std;
-
+int adiff(int a,int b)
+{
+    if (a<0)
+    {
+        a=360+a;
+    }
+    if (b<0)
+    {
+        b=360+b;
+    }
+    
+        a=a%360;
+        b=b%360;
+    
+    if (a<360 and b<360)
+    {
+        if (a>b)
+        {
+            if ((a-b)>(360-a+b))
+            {
+                return 360-a+b;
+            }
+            else
+            {
+                return a-b;
+            }
+        }
+        else 
+        {
+            if ((b-a)>(360-b+a))
+            {
+                return 360-b+a;
+            }
+        
+            else
+            {
+                    return b-a;
+            }
+        }
+    }   
+    else
+    {
+        return 0;
+    }
+}
 
 int main(){
   cout << adiff(180,270);
